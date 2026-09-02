@@ -1,0 +1,16 @@
+# .NET / Visual Studio build output
+bin/
+obj/
+.vs/
+*.user
+*.suo
+
+# OS cruft
+.DS_Store
+Thumbs.db
+
+# Local tooling config, not part of the project
+.claude/
+
+# Earlier prototype, kept locally but not part of this repo
+/ImageGatewayDemo/
