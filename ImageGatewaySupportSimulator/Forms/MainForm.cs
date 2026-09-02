@@ -324,7 +324,7 @@ public class MainForm : Form
     private void InitializeUi()
     {
         Text = "Image Gateway Support Simulator";
-        ClientSize = new Size(920, 800);
+        ClientSize = new Size(1000, 800);
         FormBorderStyle = FormBorderStyle.FixedSingle;
         MaximizeBox = false;
         StartPosition = FormStartPosition.CenterScreen;
@@ -359,7 +359,7 @@ public class MainForm : Form
         {
             Text = "Image Delivery",
             Location = new Point(16, 78),
-            Size = new Size(430, 400)
+            Size = new Size(470, 400)
         };
 
         var lblRecordId = new Label { Text = "Record ID:", Location = new Point(12, 28), AutoSize = true };
@@ -377,14 +377,14 @@ public class MainForm : Form
         {
             Text = "No image selected",
             Location = new Point(12, 100),
-            Size = new Size(400, 20),
+            Size = new Size(430, 20),
             AutoEllipsis = true
         };
 
         picPreview = new PictureBox
         {
             Location = new Point(12, 124),
-            Size = new Size(150, 150),
+            Size = new Size(170, 170),
             BorderStyle = BorderStyle.FixedSingle,
             SizeMode = PictureBoxSizeMode.Zoom
         };
@@ -392,21 +392,21 @@ public class MainForm : Form
         lblFileSize = new Label
         {
             Text = "File size: -",
-            Location = new Point(172, 124),
+            Location = new Point(192, 124),
             AutoSize = true
         };
 
         var lblSimulationMode = new Label
         {
             Text = "Simulation Mode:",
-            Location = new Point(12, 296),
+            Location = new Point(12, 316),
             AutoSize = true
         };
 
         cmbSimulationMode = new ComboBox
         {
-            Location = new Point(150, 292),
-            Width = 240,
+            Location = new Point(150, 312),
+            Width = 300,
             DropDownStyle = ComboBoxStyle.DropDownList
         };
         cmbSimulationMode.Items.AddRange(new object[] { HealthyMode, GatewayOfflineMode, TransportFailureMode });
@@ -414,7 +414,7 @@ public class MainForm : Form
         btnSendImage = new Button
         {
             Text = "Send Image",
-            Location = new Point(12, 334),
+            Location = new Point(12, 354),
             Size = new Size(140, 32)
         };
         btnSendImage.Click += btnSendImage_Click;
@@ -422,7 +422,7 @@ public class MainForm : Form
         btnRetry = new Button
         {
             Text = "Retry",
-            Location = new Point(162, 334),
+            Location = new Point(162, 354),
             Size = new Size(90, 32),
             Visible = false
         };
@@ -442,8 +442,8 @@ public class MainForm : Form
         var group = new GroupBox
         {
             Text = "Support Diagnostics",
-            Location = new Point(462, 78),
-            Size = new Size(442, 400)
+            Location = new Point(502, 78),
+            Size = new Size(482, 400)
         };
 
         const int labelX = 12;
@@ -473,7 +473,7 @@ public class MainForm : Form
         lblDiagnosticsSummary = new Label
         {
             Location = new Point(labelX, 164),
-            Size = new Size(410, 40),
+            Size = new Size(450, 40),
             Font = new Font("Segoe UI", 10F, FontStyle.Bold)
         };
 
@@ -488,7 +488,7 @@ public class MainForm : Form
         lblSuggestedChecksBody = new Label
         {
             Location = new Point(labelX, 236),
-            Size = new Size(410, 90)
+            Size = new Size(450, 90)
         };
 
         btnExportReport = new Button
@@ -517,13 +517,13 @@ public class MainForm : Form
         {
             Text = "Event Timeline",
             Location = new Point(16, 494),
-            Size = new Size(888, 254)
+            Size = new Size(968, 254)
         };
 
         txtTimeline = new TextBox
         {
             Location = new Point(12, 22),
-            Size = new Size(864, 220),
+            Size = new Size(944, 220),
             Multiline = true,
             ReadOnly = true,
             ScrollBars = ScrollBars.Vertical,
