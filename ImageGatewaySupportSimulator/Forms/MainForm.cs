@@ -324,7 +324,7 @@ public class MainForm : Form
     private void InitializeUi()
     {
         Text = "Image Gateway Support Simulator";
-        ClientSize = new Size(1000, 800);
+        ClientSize = new Size(1000, 804);
         FormBorderStyle = FormBorderStyle.FixedSingle;
         MaximizeBox = false;
         StartPosition = FormStartPosition.CenterScreen;
@@ -359,7 +359,7 @@ public class MainForm : Form
         {
             Text = "Image Delivery",
             Location = new Point(16, 78),
-            Size = new Size(470, 400)
+            Size = new Size(470, 440)
         };
 
         var lblRecordId = new Label { Text = "Record ID:", Location = new Point(12, 28), AutoSize = true };
@@ -383,7 +383,7 @@ public class MainForm : Form
 
         picPreview = new PictureBox
         {
-            Location = new Point(12, 124),
+            Location = new Point(12, 136),
             Size = new Size(170, 170),
             BorderStyle = BorderStyle.FixedSingle,
             SizeMode = PictureBoxSizeMode.Zoom
@@ -392,20 +392,22 @@ public class MainForm : Form
         lblFileSize = new Label
         {
             Text = "File size: -",
-            Location = new Point(192, 124),
+            Location = new Point(192, 136),
             AutoSize = true
         };
 
         var lblSimulationMode = new Label
         {
             Text = "Simulation Mode:",
-            Location = new Point(12, 316),
+            Location = new Point(12, 328),
             AutoSize = true
         };
 
+        // Stacked below its label (rather than sharing a row) so the label's real
+        // rendered width can never overlap the ComboBox, regardless of font/DPI.
         cmbSimulationMode = new ComboBox
         {
-            Location = new Point(150, 312),
+            Location = new Point(12, 350),
             Width = 300,
             DropDownStyle = ComboBoxStyle.DropDownList
         };
@@ -414,7 +416,7 @@ public class MainForm : Form
         btnSendImage = new Button
         {
             Text = "Send Image",
-            Location = new Point(12, 354),
+            Location = new Point(12, 392),
             Size = new Size(140, 32)
         };
         btnSendImage.Click += btnSendImage_Click;
@@ -422,7 +424,7 @@ public class MainForm : Form
         btnRetry = new Button
         {
             Text = "Retry",
-            Location = new Point(162, 354),
+            Location = new Point(162, 392),
             Size = new Size(90, 32),
             Visible = false
         };
@@ -516,7 +518,7 @@ public class MainForm : Form
         var group = new GroupBox
         {
             Text = "Event Timeline",
-            Location = new Point(16, 494),
+            Location = new Point(16, 534),
             Size = new Size(968, 254)
         };
 
