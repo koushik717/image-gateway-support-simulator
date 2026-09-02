@@ -3,9 +3,13 @@
 A small C#/.NET Windows Forms learning project that simulates a local
 image-delivery workflow and explores support diagnostics.
 
-## Screenshot
+## Demo
 
-_Screenshot coming soon - not yet captured._
+![Message Transport Failure](docs/message-transport-failure.png)
+
+Example of a simulated message transport failure. The diagnostic panel shows
+which stages were reached successfully and leaves the downstream cloud
+destination as NOT TESTED because the operation never reached that layer.
 
 ## Architecture
 
@@ -44,9 +48,26 @@ pipeline, so the diagnostics panel can show exactly which layer - Image,
 Gateway, Message Transport, or Cloud Destination - a delivery attempt got to
 before failing, plus a short list of suggested checks.
 
+NOT TESTED is intentionally different from FAIL: it means the operation
+stopped at an earlier layer, so the downstream component was never reached.
+
 A bad request (for example, a missing Record ID) is also handled and reported
 separately from an actual Gateway Offline failure, since the request never
 meaningfully reaches the simulated gateway in that case.
+
+### Healthy Flow
+
+![Healthy Flow](docs/healthy-flow.png)
+
+All simulated stages complete successfully.
+
+### Gateway Offline
+
+![Gateway Offline](docs/gateway-offline.png)
+
+The image is validated, but the simulated local gateway is unavailable.
+Message transport and cloud destination remain NOT TESTED because the
+request stops at the gateway.
 
 ## What I Learned
 
@@ -62,7 +83,7 @@ meaningfully reaches the simulated gateway in that case.
 ## How to Run (Windows)
 
 This is a WinForms application and requires Windows with the .NET 8 SDK
-installed.
+installed. Manually verified on Windows 11 with .NET 8.
 
 ```bash
 dotnet run --project ImageGatewaySupportSimulator
