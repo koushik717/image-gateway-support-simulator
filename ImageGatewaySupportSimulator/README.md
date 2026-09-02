@@ -77,13 +77,7 @@ dotnet test
 
 ## Scope and Limitations
 
-This is a learning project, not production software. The gateway, message
-transport, and cloud destination are all mocked - nothing here connects to a
-real messaging provider, cloud service, or external system of any kind, and
-it makes no claims about compliance with any regulatory standard.
-
-This was developed without access to a Windows machine. The service and
-diagnostics logic (`Models`, `Services`, `Diagnostics`) is covered by
-automated tests and has been verified to run correctly. The WinForms UI
-itself has been reviewed but not yet run in a live Windows environment -
-that verification, along with a screenshot, is still pending.
+This is a learning project, not production software. The gateway,
+message transport, and cloud destination are simulated. The project
+does not connect to any real messaging provider, cloud service,
+healthcare system, or external application.
